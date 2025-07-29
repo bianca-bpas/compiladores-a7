@@ -1,15 +1,26 @@
 #include <stdio.h>
 
 int soma(int a, int b) {
+    if (a < 0 || b < 0){
+        return -1;
+    }
     return a + b;
 }
 
 int multiplica(int x, int y) {
+    if (x < 0 || y < 0) {
+        return -1;
+    }
     return x * y;
 }
 
 int divide(int x, int y) {
-    if (y == 0) return 0;
+    if (x < 0 || y < 0) {
+        return -1;
+    }
+    if (y == 0){
+        return -1;
+    } 
     return x / y;
 }
 
