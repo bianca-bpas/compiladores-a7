@@ -1,0 +1,15 @@
+digraph "CFG for 'soma' function" {
+	label="CFG for 'soma' function";
+
+	Node0x5efa8795ebd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  %6 = load i32, ptr %4, align 4\l  %7 = icmp slt i32 %6, 0\l  br i1 %7, label %11, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x5efa8795ebd0:s0 -> Node0x5efa87963ec0[tooltip="2 -> 11\nProbability 37.50%" ];
+	Node0x5efa8795ebd0:s1 -> Node0x5efa87963e70[tooltip="2 -> 8\nProbability 62.50%" ];
+	Node0x5efa87963e70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %5, align 4\l  %10 = icmp slt i32 %9, 0\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x5efa87963e70:s0 -> Node0x5efa87963ec0[tooltip="8 -> 11\nProbability 37.50%" ];
+	Node0x5efa87963e70:s1 -> Node0x5efa87963f10[tooltip="8 -> 12\nProbability 62.50%" ];
+	Node0x5efa87963ec0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  store i32 -1, ptr %3, align 4\l  br label %16\l}"];
+	Node0x5efa87963ec0 -> Node0x5efa87963f60[tooltip="11 -> 16\nProbability 100.00%" ];
+	Node0x5efa87963f10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %4, align 4\l  %14 = load i32, ptr %5, align 4\l  %15 = add nsw i32 %13, %14\l  store i32 %15, ptr %3, align 4\l  br label %16\l}"];
+	Node0x5efa87963f10 -> Node0x5efa87963f60[tooltip="12 -> 16\nProbability 100.00%" ];
+	Node0x5efa87963f60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %3, align 4\l  ret i32 %17\l}"];
+}

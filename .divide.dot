@@ -1,0 +1,20 @@
+digraph "CFG for 'divide' function" {
+	label="CFG for 'divide' function";
+
+	Node0x5efa87964f10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  %6 = load i32, ptr %4, align 4\l  %7 = icmp slt i32 %6, 0\l  br i1 %7, label %11, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x5efa87964f10:s0 -> Node0x5efa87965ad0[tooltip="2 -> 11\nProbability 37.50%" ];
+	Node0x5efa87964f10:s1 -> Node0x5efa87965a80[tooltip="2 -> 8\nProbability 62.50%" ];
+	Node0x5efa87965a80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %5, align 4\l  %10 = icmp slt i32 %9, 0\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x5efa87965a80:s0 -> Node0x5efa87965ad0[tooltip="8 -> 11\nProbability 37.50%" ];
+	Node0x5efa87965a80:s1 -> Node0x5efa87965b20[tooltip="8 -> 12\nProbability 62.50%" ];
+	Node0x5efa87965ad0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  store i32 -1, ptr %3, align 4\l  br label %20\l}"];
+	Node0x5efa87965ad0 -> Node0x5efa87965c10[tooltip="11 -> 20\nProbability 100.00%" ];
+	Node0x5efa87965b20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %5, align 4\l  %14 = icmp eq i32 %13, 0\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x5efa87965b20:s0 -> Node0x5efa87965b70[tooltip="12 -> 15\nProbability 37.50%" ];
+	Node0x5efa87965b20:s1 -> Node0x5efa87965bc0[tooltip="12 -> 16\nProbability 62.50%" ];
+	Node0x5efa87965b70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{15:\l|  store i32 -1, ptr %3, align 4\l  br label %20\l}"];
+	Node0x5efa87965b70 -> Node0x5efa87965c10[tooltip="15 -> 20\nProbability 100.00%" ];
+	Node0x5efa87965bc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %4, align 4\l  %18 = load i32, ptr %5, align 4\l  %19 = sdiv i32 %17, %18\l  store i32 %19, ptr %3, align 4\l  br label %20\l}"];
+	Node0x5efa87965bc0 -> Node0x5efa87965c10[tooltip="16 -> 20\nProbability 100.00%" ];
+	Node0x5efa87965c10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %3, align 4\l  ret i32 %21\l}"];
+}
